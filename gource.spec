@@ -60,6 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README THANKS
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/gource
 %{_datadir}/gource
-%{_mandir}/man1/*
+%{_mandir}/man1/gource.1*
