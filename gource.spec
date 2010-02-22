@@ -2,11 +2,11 @@
 # - use fonts-TTF-freefont
 Summary:	Software version control visualization
 Name:		gource
-Version:	0.18
+Version:	0.24
 Release:	0.1
 URL:		http://gource.googlecode.com/
 Source0:	http://gource.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	c9f1617468e1ac232d57cd91fa2fa656
+# Source0-md5:	f896ebc6efbe3deed47dccf6c768dba5
 License:	GPL v3+
 Group:		X11/Applications
 BuildRequires:	OpenGL-GLU-devel
