@@ -1,11 +1,11 @@
 Summary:	Software version control visualization
 Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
-Version:	0.24
+Version:	0.31
 Release:	1
 URL:		http://gource.googlecode.com/
 Source0:	http://gource.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	f896ebc6efbe3deed47dccf6c768dba5
+# Source0-md5:	079c756ebb14f914886d436689e12c59
 License:	GPL v3+
 Group:		X11/Applications
 BuildRequires:	OpenGL-GLU-devel
@@ -18,6 +18,7 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig
+BuildRequires:	tinyxml-devel
 BuildRequires:	xorg-lib-libX11-devel
 Requires:	fonts-TTF-freefont
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -46,6 +47,7 @@ CVS i SVN.
 
 %build
 %configure \
+	--with-tinyxml \
 	--enable-ttf-font-dir=%{_datadir}/fonts/TTF
 %{__make}
 
