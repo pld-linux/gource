@@ -14,6 +14,8 @@ BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_image-devel >= 1.2
 BuildRequires:	freetype-devel
 BuildRequires:	ftgl-devel >= 2.1.3
+BuildRequires:	gawk
+BuildRequires:	glew-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	pcre-devel
