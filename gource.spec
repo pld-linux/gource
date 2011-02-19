@@ -1,7 +1,5 @@
-# TODO
-# - use fonts-TTF-freefont
 Summary:	Software version control visualization
-Summary(pl.UTF-8):      Narzędzie wizualizujące kontrolę wersji
+Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
 Version:	0.24
 Release:	1
@@ -21,6 +19,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libX11-devel
+Requires:	fonts-TTF-freefont
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,8 +28,8 @@ root directory of the project at its centre. Directories appear as
 branches with files as leaves. Developers can be seen working on the
 tree at the times they contributed to the project.
 
-Currently there is first party support for Git and Mercurial, and third
-party (using additional steps) for CVS and SVN.
+Currently there is first party support for Git and Mercurial, and
+third party (using additional steps) for CVS and SVN.
 
 %description -l pl.UTF-8
 Gource wyświetla projekty software'owe jako animowane drzewo z
@@ -39,8 +38,8 @@ postaci gałęzi, a pliki to liście. Developerzy widoczni są przy pracy
 nad drzewem w czasie gdy rzeczywiście pracowali.
 
 Na chwilę obecną Gource natywnie wspiera repozytoria Git i Mercurial.
-Przy pomocy zewnętrznych narzędzi można również oglądać repozytoria CVS
-i SVN.
+Przy pomocy zewnętrznych narzędzi można również oglądać repozytoria
+CVS i SVN.
 
 %prep
 %setup -q
@@ -52,7 +51,12 @@ i SVN.
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
+	gourcefontdir=%{_datadir}/fonts/TTF \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# remove by file, to note when upstream bundles different font
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/README
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/FreeSans.ttf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -61,5 +65,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README THANKS
 %attr(755,root,root) %{_bindir}/gource
-%{_datadir}/gource
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/*.png
+%{_datadir}/%{name}/*.tga
+%{_datadir}/%{name}/*.style
 %{_mandir}/man1/gource.1*
