@@ -45,18 +45,14 @@ CVS i SVN.
 %setup -q
 
 %build
-%configure
+%configure \
+	--enable-ttf-font-dir=%{_datadir}/fonts/TTF
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	gourcefontdir=%{_datadir}/fonts/TTF \
 	DESTDIR=$RPM_BUILD_ROOT
-
-# remove by file, to note when upstream bundles different font
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/README
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/FreeSans.ttf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
