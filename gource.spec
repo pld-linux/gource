@@ -2,7 +2,7 @@ Summary:	Software version control visualization
 Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
 Version:	0.32
-Release:	1
+Release:	2
 URL:		http://gource.googlecode.com/
 Source0:	http://gource.googlecode.com/files/%{name}-%{version}.tar.gz
 # Source0-md5:	7aed2fcf8f0c09b8cea5b19a418b0724
