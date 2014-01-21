@@ -1,13 +1,14 @@
 Summary:	Software version control visualization
 Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
-Version:	0.37
-Release:	2
+Version:	0.40
+Release:	1
 License:	GPL v3+
 Source0:	http://gource.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	9c023429a8a495e6473d4c166788278a
+# Source0-md5:	89c608a7aa3c901661eb1f2db6117492
 URL:		http://gource.googlecode.com/
 Group:		X11/Applications
+BuildRequires:	GLM
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	SDL-devel >= 1.2
