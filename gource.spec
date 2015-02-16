@@ -2,7 +2,7 @@ Summary:	Software version control visualization
 Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
 Version:	0.40
-Release:	4
+Release:	5
 License:	GPL v3+
 Source0:	http://gource.googlecode.com/files/%{name}-%{version}.tar.gz
 # Source0-md5:	89c608a7aa3c901661eb1f2db6117492
