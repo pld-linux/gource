@@ -1,11 +1,12 @@
 Summary:	Software version control visualization
 Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
-Version:	0.40
-Release:	5
+Version:	0.43
+Release:	1
 License:	GPL v3+
-Source0:	http://gource.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	89c608a7aa3c901661eb1f2db6117492
+Source0:	https://github.com/acaudwell/Gource/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	d2b601782692301f6d8ecc97dc85d3f7
+Patch0:		gl-ac.patch
 URL:		http://gource.googlecode.com/
 Group:		X11/Applications
 BuildRequires:	GLM
@@ -46,9 +47,13 @@ CVS i SVN.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
 %configure \
+	CC=%{__cxx} \
 	--with-tinyxml \
 	--enable-ttf-font-dir=%{_datadir}/fonts/TTF
 %{__make}
