@@ -2,7 +2,7 @@ Summary:	Software version control visualization
 Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
 Version:	0.49
-Release:	1
+Release:	2
 License:	GPL v3+
 Source0:	https://github.com/acaudwell/Gource/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	a5d5895141eae689b3fd6d8fbcbb4c4b
