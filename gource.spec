@@ -8,7 +8,7 @@ License:	GPL v3+
 Source0:	https://github.com/acaudwell/Gource/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	957723684373e6d9493c4820e9c53399
 Patch0:		gl-ac.patch
-URL:		http://gource.googlecode.com/
+URL:		https://github.com/acaudwell/Gource
 Group:		X11/Applications
 BuildRequires:	GLM
 BuildRequires:	OpenGL-GLU-devel
