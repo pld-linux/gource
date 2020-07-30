@@ -1,28 +1,33 @@
 Summary:	Software version control visualization
 Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
-Version:	0.49
-Release:	4
+Version:	0.51
+Release:	1
 License:	GPL v3+
+#Source0Download: https://github.com/acaudwell/Gource/releases
 Source0:	https://github.com/acaudwell/Gource/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	a5d5895141eae689b3fd6d8fbcbb4c4b
+# Source0-md5:	957723684373e6d9493c4820e9c53399
 Patch0:		gl-ac.patch
 URL:		http://gource.googlecode.com/
 Group:		X11/Applications
 BuildRequires:	GLM
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-GLX-devel
-BuildRequires:	SDL-devel >= 1.2
-BuildRequires:	SDL_image-devel >= 1.2
-BuildRequires:	freetype-devel
+BuildRequires:	SDL2-devel >= 2
+BuildRequires:	SDL2_image-devel >= 2
+BuildRequires:	autoconf >= 2.61
+BuildRequires:	automake
+BuildRequires:	boost-devel >= 1.46
+BuildRequires:	freetype-devel >= 2.0.9
 BuildRequires:	ftgl-devel >= 2.1.3
 BuildRequires:	glew-devel
 BuildRequires:	libjpeg-devel
-BuildRequires:	libpng-devel
+BuildRequires:	libpng-devel >= 1.2
 BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig
 BuildRequires:	tinyxml-devel
 BuildRequires:	xorg-lib-libX11-devel
+Requires:	freetype >= 2.0.9
 Requires:	fonts-TTF-freefont
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -54,7 +59,6 @@ CVS i SVN.
 %{__autoconf}
 %{__automake}
 %configure \
-	CC=%{__cxx} \
 	--with-tinyxml \
 	--enable-ttf-font-dir=%{_datadir}/fonts/TTF
 %{__make}
