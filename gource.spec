@@ -4,13 +4,13 @@ Name:		gource
 Version:	0.51
 Release:	6
 License:	GPL v3+
+Group:		X11/Applications
 #Source0Download: https://github.com/acaudwell/Gource/releases
 Source0:	https://github.com/acaudwell/Gource/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	957723684373e6d9493c4820e9c53399
 Patch0:		gl-ac.patch
 URL:		https://github.com/acaudwell/Gource
-Group:		X11/Applications
-BuildRequires:	GLM
+BuildRequires:	GLM-devel
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-GLX-devel
 BuildRequires:	SDL2-devel >= 2
