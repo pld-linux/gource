@@ -1,13 +1,13 @@
 Summary:	Software version control visualization
 Summary(pl.UTF-8):	Narzędzie wizualizujące kontrolę wersji
 Name:		gource
-Version:	0.51
-Release:	6
+Version:	0.55
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 #Source0Download: https://github.com/acaudwell/Gource/releases
 Source0:	https://github.com/acaudwell/Gource/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	957723684373e6d9493c4820e9c53399
+# Source0-md5:	49466e4df41022a75848b598d462d442
 Patch0:		gl-ac.patch
 URL:		https://github.com/acaudwell/Gource
 BuildRequires:	GLM-devel
@@ -23,7 +23,8 @@ BuildRequires:	ftgl-devel >= 2.1.3
 BuildRequires:	glew-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel >= 1.2
-BuildRequires:	pcre-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	pcre2-8-devel
 BuildRequires:	pkgconfig
 BuildRequires:	tinyxml-devel
 BuildRequires:	xorg-lib-libX11-devel
@@ -73,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README THANKS
+%doc ChangeLog README.md THANKS
 %attr(755,root,root) %{_bindir}/gource
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.png

@@ -1,11 +1,11 @@
---- gource-0.40/m4/ax_check_glu.m4~	2013-04-24 03:58:51.000000000 +0200
-+++ gource-0.40/m4/ax_check_glu.m4	2015-06-27 12:04:05.304524114 +0200
-@@ -131,7 +131,7 @@
- # else
- #   include <OpenGL/glu.h>
- # endif]],
--                                        [[GLvoid (*func)(...); gluTessCallback(0, 0, func)]])],
-+                                        [[GLvoid (*func)(); gluTessCallback(0, 0, func)]])],
-                                         [ax_cv_varargs_glu_tesscb=yes])
-                       CXXFLAGS=$ax_save_CXXFLAGS
-                       AC_LANG_POP([C++])])
+--- gource-0.55/m4/ax_check_glu.m4.orig	2024-09-29 20:41:58.804370720 +0200
++++ gource-0.55/m4/ax_check_glu.m4	2024-09-29 20:42:34.594176830 +0200
+@@ -130,7 +130,7 @@ m4_define([_AX_CHECK_GLU_VARARGS_TESSVB_
+ #   error no glu.h
+ # endif
+ ]],
+-[[GLvoid (*func)(...); gluTessCallback(0, 0, func)]])
++[[GLvoid (*func)(); gluTessCallback(0, 0, func)]])
+ ])
+ 
+ 
