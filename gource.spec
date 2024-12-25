@@ -8,7 +8,6 @@ Group:		X11/Applications
 #Source0Download: https://github.com/acaudwell/Gource/releases
 Source0:	https://github.com/acaudwell/Gource/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	49466e4df41022a75848b598d462d442
-Patch0:		gl-ac.patch
 URL:		https://github.com/acaudwell/Gource
 BuildRequires:	GLM-devel
 BuildRequires:	OpenGL-GLU-devel
@@ -53,12 +52,8 @@ CVS i SVN.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__automake}
 %configure \
 	--with-tinyxml \
 	--enable-ttf-font-dir=%{_datadir}/fonts/TTF
