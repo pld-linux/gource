@@ -16,9 +16,9 @@ BuildRequires:	SDL2-devel >= 2
 BuildRequires:	SDL2_image-devel >= 2
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake
-BuildRequires:	boost-devel >= 1.46
+BuildRequires:	boost-devel >= 1.69
+# pkgconfig(freetype2) >= 9.0.3
 BuildRequires:	freetype-devel >= 2.0.9
-BuildRequires:	ftgl-devel >= 2.1.3
 BuildRequires:	glew-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel >= 1.2
